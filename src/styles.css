@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+}
+.top-pane{
+  background-color: hsl(225, 6%, 25%);
+}
+.pane{
+  height: 50vh;
+  display: flex;
+}
+
+.editor-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0.5rem;
+  background-color: hsl(225, 6%, 25%);
+}
+.editor-container.collapsed{
+  flex-grow: 0;
+}
+.editor-container.collapsed .CodeMirror-scroll{
+  position: absolute;
+  overflow: hidden !important;
+}
+.expand-collapse-btn {
+  margin-left: .5rem;
+  background: none;
+  border: white;
+  cursor: pointer;
+}
+.editor-title{
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(225, 6%, 13%);
+  columns: white;
+  color: yellow;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+.codeMirror{
+ 
+}
+.code-mirror-wrapper{
+  flex-grow: 2;
+  overflow: hidden;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}

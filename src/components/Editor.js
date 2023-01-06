@@ -22,10 +22,13 @@ function Editor(props) {
     }
     const [expanded, setExpanded] = useState(true);
   return (
-    <div className={`editor-container`} >
+    <div className={`editor-container ${expanded ? "" : "collapsed"}`} >
         <div className = 'editor-title'> 
+        <div className='icons'>
         {icon}
         {displayName}
+        </div>
+        <div className='buttons'>
         <button onClick={()=>onChange('')}>
           <FontAwesomeIcon icon={faUndoAlt} />
         </button>
@@ -33,7 +36,9 @@ function Editor(props) {
           <FontAwesomeIcon icon={expanded ? faCompressAlt : faExpandAlt}/>
         </button>
         </div>
-
+        
+        </div>
+    {/*all inputs codemirror2 */}
         <ControlledEditor 
           onBeforeChange={handleChange}
           value = {value}
@@ -43,7 +48,7 @@ function Editor(props) {
             lint: true,
             mode: language,
             theme:'material',
-            lineNumber: true,
+            lineNumbers: true,
           }}
         />
     </div>
